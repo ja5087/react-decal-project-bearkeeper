@@ -1,0 +1,86 @@
+.todo-input-container > form {
+  display: flex;
+}
+
+.todo-input, .todo-input-button {
+  box-sizing: border-box;
+  padding-top: 1.2em;
+  padding-bottom: 0.7em;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: 0;
+}
+
+.todo-input {
+  padding-left: 1em;
+  background: #E7EDF8;
+  border-radius: 4px 0 0 4px;
+  flex-grow: 1;
+}
+.todo-input::placeholder {
+  color: #8A98AF;
+}
+
+.todo-input-button {
+  background: #4A6ED2;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  /*
+  center children vertically and horizontally
+  https://stackoverflow.com/questions/25832340/css-flexbox-vertically-horizontally-center-image-without-explicitely-defining-pa
+  */
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  /* minimum size */
+  flex-basis: 2.7em;
+  cursor: pointer;
+}
+
+.todo-input-button > svg {
+  width: 1em;
+  height: 1em;
+}
+.Collapsible {
+  margin-bottom: 2.0rem 0;
+  width: 50%;
+  height: 50%;
+  box-align: center;
+}
+
+
+.Collapsible__trigger {
+  display: block;
+
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 1rem;
+
+  color: #A58;
+  background: #FAE042;
+
+  cursor: pointer;
+
+  border-radius: 7px;
+  transition: all 0.25s ease-out;
+}
+
+
+.Collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .25s ease-in-out;
+}
+
+ .Collapsible__contentInner {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background: rgba(250, 224, 66, .2);
+  border-bottom: 1px solid rgba(250, 224, 66, .45);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .5rem 1rem;
+}

@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import AddCollapsible from './AddCollapsible';
+import Course from './Course';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.addCollapsible = this.addCollapsible.bind(this);
+      this.state = {
+        collapsibles: []
+      };
+    }
+    addCollapsible(title){
+      const newCollapsible = {
+        course: title
+      };
+      this.setState(prevState => ({
+        collapsibles:[...prevState.collapsibles, newCollapsible],
+      }));
+    }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+      <div>
+        <header>
+          <h4>Welcome to BearKeeper! Your time saviour at Berkeley </h4>
         </header>
+        <div className="items-container">
+            {this.state.collapsibles.map(x => (<Course title={x.course} />))}
+          </div>
+        <footer>
+          <AddCollapsible addCollapsible={this.addCollapsible}  />
+        </footer>
       </div>
     );
   }
