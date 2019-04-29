@@ -39,7 +39,6 @@ export default class Course extends React.Component {
     this.setState(prevState => {
 
       let newTodoItems = [...prevState.todoItems];
-      console.log(newTodoItems)
       for(let i = 0; i < newTodoItems.length; i++) {
         if(newTodoItems[i].id == id) {
           newTodoItems[i].text = newText;
@@ -57,8 +56,8 @@ export default class Course extends React.Component {
       <div>
         <Collapsible trigger={this.props.title}>
           {this.state.todoItems.map(item => 
-            <TodoItem modifyHandler={this.modifyTodoItem} text={item.text} key={item.id} />)}
-          <AddTodoItem addTodoItem={this.addTodoItem}/>
+            <TodoItem modifyHandler={this.modifyTodoItem} text={item.text} key={item.id} date={item.dueDate} />)}
+          <AddTodoItem addTodoItem={this.addTodoItem} />
         </Collapsible>
       <br/>
       <br></br>

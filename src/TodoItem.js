@@ -7,9 +7,11 @@ export default class TodoItem extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onClickHandler = this.onClickHandler.bind(this);
     this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.onDateChangeHandler = this.onDateChangeHandler.bind(this)
     this.state = {
         text: this.props.text,
-        "isEditable": false
+        "isEditable": false,
+        date: this.props.date
     }
   }
 
@@ -26,11 +28,14 @@ export default class TodoItem extends React.Component {
     e.preventDefault();
     this.setState({text: e.target.value});
   }
-
+  onDateChangeHandler(e) {
+    e.preventDefault();
+    this.setState({date: e.target.value});
+  }
   handleSubmit(e) {
     e.preventDefault();
     let {id} = this.props;
-    this.props.modifyHandler(id, this.state.text);
+    this.props.modifyHandler(id, this.state.text, this.state.date);
     this.setState(prevState => ({
         "isEditable": false
     }));
@@ -47,6 +52,13 @@ export default class TodoItem extends React.Component {
               onClick={this.onClickHandler} 
               onChange={this.onChangeHandler}
               value={this.state.text}/>
+            <input 
+              className="todo-input"
+              type={this.state.isEditable ? "text" : "button"} 
+              onClick={this.onClickHandler} 
+              onChange={this.onDateChangeHandler}
+              value={this.state.date}/>
+
             </form>
         </div>
     );

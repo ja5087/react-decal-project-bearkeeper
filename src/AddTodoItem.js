@@ -5,11 +5,13 @@ export default class AddTodoItem extends React.Component {
     super(props);
 
     this.state = {
-      newTodoItemValue: '', // initialize to empty string
+      newTodoItemValue: '',
+      date: 0 // initialize to empty string
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
   }
 
   handleChange(e) {
@@ -17,12 +19,17 @@ export default class AddTodoItem extends React.Component {
       newTodoItemValue: e.target.value
     });
   }
+  handleDateChange(e) {
+    this.setState({
+      date: e.target.value
+    });
+  }
 
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.newTodoItemValue !== '') { 
-      this.props.addTodoItem(this.state.newTodoItemValue);
-      this.setState({ newTodoItemValue: '' });
+      this.props.addTodoItem(this.state.newTodoItemValue, this.state.date);
+      this.setState({ newTodoItemValue: '', date: 0 });
     }
   }
 
@@ -34,6 +41,12 @@ export default class AddTodoItem extends React.Component {
             placeholder="Add a new todo for this course..."
             value={this.state.newTodoItemValue}
             onChange={this.handleChange}
+            className="todo-input"
+          />
+          <input type="date"
+            placeholder="Add the Due Date..."
+            value={this.state.date}
+            onChange={this.handleDateChange}
             className="todo-input"
           />
           <button type="submit" className="todo-input-button">
