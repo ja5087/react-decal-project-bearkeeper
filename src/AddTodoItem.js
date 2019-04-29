@@ -1,8 +1,6 @@
 import React from 'react';
-import Course from '../src/Course'
-import '../src/addcollapsible.css';
 
-export default class AddCollapsible extends React.Component {
+export default class AddTodoItem extends React.Component {
   constructor(props) {
     super(props);
 
@@ -23,7 +21,7 @@ export default class AddCollapsible extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.newTodoItemValue !== '') { 
-      this.props.addCollapsible(this.state.newTodoItemValue)
+      this.props.addTodoItem(this.state.newTodoItemValue);
       this.setState({ newTodoItemValue: '' });
     }
   }
@@ -33,7 +31,7 @@ export default class AddCollapsible extends React.Component {
       <div className="todo-input-container">
         <form onSubmit={this.handleSubmit}>
           <input
-            placeholder="Add a Course..."
+            placeholder="Add a new todo for this course..."
             value={this.state.newTodoItemValue}
             onChange={this.handleChange}
             className="todo-input"

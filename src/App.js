@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import AddCollapsible from './AddCollapsible';
 import Course from './Course';
-import './App.css';
+import './styles/App.css';
+import TodoItem from './TodoItem';
+
 
 class App extends Component {
   constructor(props) {
