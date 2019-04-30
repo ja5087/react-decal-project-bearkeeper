@@ -3,7 +3,7 @@ import AddCollapsible from './AddCollapsible';
 import Course from './Course';
 import './styles/App.css';
 import TodoItem from './TodoItem';
-import img from '../src/Slide2.JPG';
+import img from '../src/Presentation1.png';
 
 
 class App extends Component {

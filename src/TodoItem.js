@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/todoItem.css';
+import { ReactComponent as Check } from '../src/check.svg';
 
 export default class TodoItem extends React.Component {
   constructor(props) {
@@ -45,22 +46,30 @@ export default class TodoItem extends React.Component {
     let {id, text} = this.props
     return (
         <div className="card todo-item-container">
-          <div className="todo-item-container-left">     
-            <form onSubmit={this.handleSubmit}>
-            <input 
-              className="todo-input"
-              type={this.state.isEditable ? "text" : "button"} 
-              onClick={this.onClickHandler} 
-              onChange={this.onChangeHandler}
-              value={this.state.text}/>
-            <input 
-              className="todo-input"
-              type={this.state.isEditable ? "text" : "button"} 
-              onClick={this.onClickHandler} 
-              onChange={this.onDateChangeHandler}
-              value={this.state.date}/>
+            <div className="todo-item-container-left">  
+              <button onClick={this.props.toggleIsCompleted} type="button" className="todo-item-complete-button">
+              { this.props.isComplete
+                ? <div className="todo-item-circle todo-item-circle-check"><Check /></div>
+                : <div className="todo-item-circle todo-item-circle-empty" />
+              }
+            </button>
+            <div>  
+              <form onSubmit={this.handleSubmit}>
+              <input 
+                className="todo-input"
+                type={this.state.isEditable ? "text" : "button"} 
+                onClick={this.onClickHandler} 
+                onChange={this.onChangeHandler}
+                value={this.state.text}/>
+              <input 
+                className="todo-input"
+                type={this.state.isEditable ? "text" : "button"} 
+                onClick={this.onClickHandler} 
+                onChange={this.onDateChangeHandler}
+                value={this.state.date}/>
 
-            </form>
+              </form>
+            </div>
           </div>
         </div>
     );

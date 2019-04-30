@@ -50,13 +50,31 @@ export default class Course extends React.Component {
 
     });
   }
+  toggleItemIsCompleted(itemId) {
+    let a = this.state.todoItems
+    for (let i = 0; i < a.length; i++) {
+      if (a[i].id === itemId) {
+        if (a[i].isComplete == true){
+          a[i].isComplete = false
+        }
+        else {
+          a[i].isComplete = true
+        }
+      }
+    }
+    this.setState(prevState => ({
+      todoItems: a
+    }));
+  };
 
   render() {
     return (
       <div className="center">
         <Collapsible trigger={this.props.title}>
           {this.state.todoItems.map(item => 
-            <TodoItem modifyHandler={this.modifyTodoItem} text={item.text} key={item.id} date={item.dueDate} />)}
+            <TodoItem modifyHandler={this.modifyTodoItem} text={item.text} key={item.id} date={item.dueDate} 
+            toggleIsCompleted={() => this.toggleItemIsCompleted(item.id)}
+            isComplete={item.isComplete} />)}
           <AddTodoItem addTodoItem={this.addTodoItem} />
         </Collapsible>
       <br/>
