@@ -53,7 +53,7 @@ export default class Course extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="center">
         <Collapsible trigger={this.props.title}>
           {this.state.todoItems.map(item => 
             <TodoItem modifyHandler={this.modifyTodoItem} text={item.text} key={item.id} date={item.dueDate} />)}

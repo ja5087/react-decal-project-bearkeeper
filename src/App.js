@@ -23,13 +23,15 @@ class App extends Component {
     }
   render() {
     return (
-      <div>
-        <header>
-          <h4>Welcome to BearKeeper! Your time saviour at Berkeley </h4>
-        </header>
-        <div className="items-container">
-            {this.state.collapsibles.map(x => (<Course title={x.course} />))}
+      <div className="flex-wrapper">
+        <div className="container">
+          <header>
+            <h1 className="heading">Welcome to BearKeeper! Your time saviour at Berkeley </h1>
+          </header>
+          <div className="items-container">
+              {this.state.collapsibles.map(x => (<Course title={x.course} />))}
           </div>
+        </div>
         <footer>
           <AddCollapsible addCollapsible={this.addCollapsible}  />
         </footer>

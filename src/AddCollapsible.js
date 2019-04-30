@@ -1,6 +1,7 @@
 import React from 'react';
 import Course from './Course'
 import './styles/addCollapsible.css';
+import { ReactComponent as Plus } from '../src/plus.svg'
 
 export default class AddCollapsible extends React.Component {
   constructor(props) {
@@ -39,6 +40,7 @@ export default class AddCollapsible extends React.Component {
             className="todo-input"
           />
           <button type="submit" className="todo-input-button">
+          <Plus />
           </button>
         </form>
       </div>

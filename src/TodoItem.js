@@ -44,7 +44,8 @@ export default class TodoItem extends React.Component {
   render() {
     let {id, text} = this.props
     return (
-        <div>      
+        <div className="card todo-item-container">
+          <div className="todo-item-container-left">     
             <form onSubmit={this.handleSubmit}>
             <input 
               className="todo-input"
@@ -60,6 +61,7 @@ export default class TodoItem extends React.Component {
               value={this.state.date}/>
 
             </form>
+          </div>
         </div>
     );
   }
