@@ -3,6 +3,7 @@ import AddCollapsible from './AddCollapsible';
 import Course from './Course';
 import './styles/App.css';
 import TodoItem from './TodoItem';
+import img from '../src/Slide2.JPG';
 
 
 class App extends Component {
@@ -26,7 +27,7 @@ class App extends Component {
       <div className="flex-wrapper">
         <div className="container">
           <header>
-            <h1 className="heading">Welcome to BearKeeper! Your time saviour at Berkeley </h1>
+            <img src={img} alt="Logo" width="10px" height="5"/>
           </header>
           <div className="items-container">
               {this.state.collapsibles.map(x => (<Course title={x.course} />))}

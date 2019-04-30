@@ -1,3 +1,12 @@
+img { 
+  width: 250px;
+  height: 100px;
+  opacity: 1;
+}
+.container {
+  position: relative;
+}
+
 .App {
   text-align: center;
 }

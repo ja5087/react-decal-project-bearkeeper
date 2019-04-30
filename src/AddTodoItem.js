@@ -1,4 +1,6 @@
 import React from 'react';
+import { ReactComponent as Plus } from '../src/plus.svg'
+
 
 export default class AddTodoItem extends React.Component {
   constructor(props) {
@@ -43,6 +45,7 @@ export default class AddTodoItem extends React.Component {
             onChange={this.handleChange}
             className="todo-input"
           />
+          <h1> || </h1>
           <input type="date"
             placeholder="Add the Due Date..."
             value={this.state.date}
@@ -50,6 +53,7 @@ export default class AddTodoItem extends React.Component {
             className="todo-input"
           />
           <button type="submit" className="todo-input-button">
+          <Plus />
           </button>
         </form>
       </div>
