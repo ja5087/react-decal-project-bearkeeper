@@ -15,7 +15,7 @@ export default class Course extends React.Component {
         {
           id: 0,
           text: "This is the first todo for this class!",
-          dueDate: "4/29/19",
+          dueDate: "2019-04-29",
           isComplete: false
         }
       ]

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/todoItem.css';
+import './styles/todolist.css';
 import { ReactComponent as Check } from '../src/check.svg';
 
 export default class TodoItem extends React.Component {
@@ -53,23 +53,20 @@ export default class TodoItem extends React.Component {
                 : <div className="todo-item-circle todo-item-circle-empty" />
               }
             </button>
-            <div>  
               <form onSubmit={this.handleSubmit}>
               <input 
-                className="todo-input"
+                className="todo-item-description"
                 type={this.state.isEditable ? "text" : "button"} 
                 onClick={this.onClickHandler} 
                 onChange={this.onChangeHandler}
                 value={this.state.text}/>
               <input 
-                className="todo-input"
+                className="todo-item-description-date"
                 type={this.state.isEditable ? "text" : "button"} 
                 onClick={this.onClickHandler} 
                 onChange={this.onDateChangeHandler}
                 value={this.state.date}/>
-
               </form>
-            </div>
           </div>
         </div>
     );

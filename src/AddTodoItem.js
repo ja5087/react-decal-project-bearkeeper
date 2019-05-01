@@ -1,5 +1,6 @@
 import React from 'react';
-import { ReactComponent as Plus } from '../src/plus.svg'
+import { ReactComponent as Plus } from '../src/plus.svg';
+import '../src/styles/todoItem.css';
 
 
 export default class AddTodoItem extends React.Component {
@@ -37,7 +38,7 @@ export default class AddTodoItem extends React.Component {
 
   render() {
     return (
-      <div className="todo-input-container">
+      <div className="card todo-input-container">
         <form onSubmit={this.handleSubmit}>
           <input
             placeholder="Add a new todo for this course..."
@@ -45,7 +46,6 @@ export default class AddTodoItem extends React.Component {
             onChange={this.handleChange}
             className="todo-input"
           />
-          <h1> || </h1>
           <input type="date"
             placeholder="Add the Due Date..."
             value={this.state.date}
