@@ -65,7 +65,11 @@ export default class TodoItem extends React.Component {
                 type={this.state.isEditable ? "text" : "button"} 
                 onClick={this.onClickHandler} 
                 onChange={this.onDateChangeHandler}
-                value={this.state.date}/>
+                value={new Intl.DateTimeFormat('en-GB', { 
+                  year: 'numeric', 
+                  month: 'long', 
+                  day: '2-digit' 
+                }).format(this.state.date)}/>
               </form>
           </div>
         </div>

@@ -9,7 +9,7 @@ export default class AddTodoItem extends React.Component {
 
     this.state = {
       newTodoItemValue: '',
-      date: 0 // initialize to empty string
+      date: new Date()// initialize to empty string
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -48,7 +48,11 @@ export default class AddTodoItem extends React.Component {
           />
           <input type="date"
             placeholder="Add the Due Date..."
-            value={this.state.date}
+            value={new Intl.DateTimeFormat('en-GB', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: '2-digit' 
+            }).format(this.state.date)}
             onChange={this.handleDateChange}
             className="todo-input"
           />
