@@ -61,7 +61,7 @@ export default class TodoItem extends React.Component {
     return (
         <div className="card todo-item-container">
             <div className="todo-item-container-left">  
-              <button onClick={this.props.toggleIsCompleted} type="button" className="todo-item-complete-button">
+              <button onClick={(e) => this.props.toggleIsCompleted(id, !this.props.isComplete)} type="button" className="todo-item-complete-button">
               { this.props.isComplete
                 ? <div className="todo-item-circle todo-item-circle-check"><Check /></div>
                 : <div className="todo-item-circle todo-item-circle-empty" />
