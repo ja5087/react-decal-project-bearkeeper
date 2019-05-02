@@ -76,10 +76,10 @@ Prompt: Task Management System
 ### Abstract: 
 This app focuses on helping students organize their time and do tasks in a more timely manner. 
 
-###Technical features:
+### Technical features:
 We're currently collecting keyboard input for the To-Do list. The onclick handlers are used to switch between editable and non-editable. Firebase is our main API intergration that allows state to be saved.
 
-###Components:
+### Components:
 1) Course - Adds a course
 2) Collapsible - Adds a collapsible/dropdown 
 3) TodoItem - Task in courses
@@ -89,17 +89,17 @@ We're currently collecting keyboard input for the To-Do list. The onclick handle
 ### Features:
 
 Students are able to:
-	a) Add courses
-	b) Add tasks and due dates to the added courses
-	c) Edit already added tasks by simply just clicking on it. 
-	d) If the due date is passed, the date turns red
-	e) If within the date, the date turns green. 
+a) Add courses
+b) Add tasks and due dates to the added courses
+c) Edit already added tasks by simply just clicking on it. 
+d) If the due date is passed, the date turns red
+e) If within the date, the date turns green. 
 
 The npm packages that we used are:
-	a) react-collapsible -- an imported npm component that we're using for our UI
-	b) moment  -- used to manage time
-	d) firebase -- used to help manage firebase interaction
-	e) semantic-ui-react -- used to style our overall website
+a) react-collapsible -- an imported npm component that we're using for our UI
+b) moment  -- used to manage time
+d) firebase -- used to help manage firebase interaction
+e) semantic-ui-react -- used to style our overall website
 
 ### Division of Labor:
 
