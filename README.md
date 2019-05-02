@@ -70,16 +70,20 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 --------------------------------------------------------------------------------------------------------------------------
 
 Team Members: Ja (Thanakul) Wattanawong, Priyans Nishithkumar Desai
+<<<<<<< HEAD
 Demo: 
+=======
+Demo: [http://bit.ly/bearkeeper](http://bit.ly/bearkeeper)
+>>>>>>> d6c22f8df0991842020f264cb0c8f15772a1739c
 Prompt: Task Management System 
 
 ### Abstract: 
 This app focuses on helping students organize their time and do tasks in a more timely manner. 
 
-###Technical features:
+### Technical features:
 We're currently collecting keyboard input for the To-Do list. The onclick handlers are used to switch between editable and non-editable. Firebase is our main API intergration that allows state to be saved.
 
-###Components:
+### Components:
 1) Course - Adds a course
 2) Collapsible - Adds a collapsible/dropdown 
 3) TodoItem - Task in courses
@@ -89,17 +93,17 @@ We're currently collecting keyboard input for the To-Do list. The onclick handle
 ### Features:
 
 Students are able to:
-	a) Add courses
-	b) Add tasks and due dates to the added courses
-	c) Edit already added tasks by simply just clicking on it. 
-	d) If the due date is passed, the date turns red
-	e) If within the date, the date turns green. 
+1) Add courses
+2) Add tasks and due dates to the added courses
+3) Edit already added tasks by simply just clicking on it. 
+4) If the due date is passed, the date turns red
+5) If within the date, the date turns green. 
 
 The npm packages that we used are:
-	a) react-collapsible -- an imported npm component that we're using for our UI
-	b) moment  -- used to manage time
-	d) firebase -- used to help manage firebase interaction
-	e) semantic-ui-react -- used to style our overall website
+1) react-collapsible -- an imported npm component that we're using for our UI
+2) moment  -- used to manage time
+3) firebase -- used to help manage firebase interaction
+4) semantic-ui-react -- used to style our overall website
 
 ### Division of Labor:
 
