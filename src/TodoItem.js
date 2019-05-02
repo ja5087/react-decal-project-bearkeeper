@@ -74,7 +74,7 @@ export default class TodoItem extends React.Component {
                 onChange={this.onChangeHandler}
                 value={this.state.text}/>
               <input 
-                className="todo-item-description-date"
+                className={moment().isAfter(this.state.date)? "notdue": "overdue"}
                 type={this.state.dateEditable ? "date" : "button"} 
                 onClick={this.onDateClickHandler} 
                 onChange={this.onDateChangeHandler}

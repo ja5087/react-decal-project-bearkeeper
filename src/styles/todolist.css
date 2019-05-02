@@ -59,29 +59,36 @@
 .todo-item-description {
   background: white;
   color: #000000;
-  padding-right: 30px;
   border: none;
   font-size: 1.1em;
   font-weight: 600;
   opacity: 1;
-  font-family: 'Lucida Handwriting', monospace;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: all 0.5s ease;
-  height: 100%;
-  width: 50%;
   overflow: hidden;
   text-align: left;
 }
-.todo-item-description-date {
+.notdue{
   background: white;
   color: green;
   border: none;
   font-size: 1.1em;
   font-weight: 1000;
   opacity: 1;
-  font-family: 'Lucida Handwriting', monospace;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: all 0.5s ease;
-  height: 100%;
-  width: 50%;
+  overflow: hidden;
+  text-align: right;
+}
+.overdue {
+  background: white;
+  color: red;
+  border: none;
+  font-size: 1.1em;
+  font-weight: 1000;
+  opacity: 1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.5s ease;
   overflow: hidden;
   text-align: right;
 }

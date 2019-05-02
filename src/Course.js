@@ -3,6 +3,7 @@ import './styles/addCollapsible.css';
 import Collapsible from  'react-collapsible';
 import TodoItem from './TodoItem';
 import AddTodoItem from './AddTodoItem';
+import moment from "moment";
 
 export default class Course extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ export default class Course extends React.Component {
         {
           id: 0,
           text: "This is the first todo for this class!",
-          dueDate: new Date(),
+          dueDate: moment().format("YYYY-MM-DD"),
           isComplete: false
         }
       ]
