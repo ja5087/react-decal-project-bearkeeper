@@ -12,7 +12,7 @@ export default class Course extends React.Component {
     this.state = {
       todoItems: []
     }
-    this.props.dbref.collection("todos").get().then(snapshot => {
+    this.props.dbref.collection("todos").onSnapshot(snapshot => {
       this.setState({
         todoItems: snapshot.docs.map(doc => ({id: doc.id, data: doc.data()}))
       })});
@@ -20,6 +20,7 @@ export default class Course extends React.Component {
 
     this.addTodoItem = this.addTodoItem.bind(this);
     this.modifyTodoItem = this.modifyTodoItem.bind(this);
+    this.toggleItemIsCompleted = this.toggleItemIsCompleted.bind(this);
     }
   
 
@@ -40,21 +41,10 @@ export default class Course extends React.Component {
     }, { merge: true });
   }
 
-  toggleItemIsCompleted(itemId) {
-    let a = this.state.todoItems
-    for (let i = 0; i < a.length; i++) {
-      if (a[i].id === itemId) {
-        if (a[i].isComplete == true){
-          a[i].isComplete = false
-        }
-        else {
-          a[i].isComplete = true
-        }
-      }
-    }
-    this.setState(prevState => ({
-      todoItems: a
-    }));
+  toggleItemIsCompleted(id, newIsComplete) {
+    this.props.dbref.collection("todos").doc(id).set({
+      isComplete: newIsComplete
+    }, { merge: true });
   };
 
   render() {
@@ -63,8 +53,8 @@ export default class Course extends React.Component {
         <Collapsible trigger={this.props.title}>
           {this.state.todoItems.map(item => 
             <TodoItem modifyHandler={this.modifyTodoItem} text={item.data.description} key={item.id} id={item.id} date={item.data.dueDate} 
-            toggleIsCompleted={() => this.toggleItemIsCompleted(item.id)}
-            isComplete={item.isComplete} />)}
+            toggleIsCompleted={this.toggleItemIsCompleted}
+            isComplete={item.data.isComplete} />)}
           <AddTodoItem addTodoItem={this.addTodoItem} />
         </Collapsible>
       <br/>
