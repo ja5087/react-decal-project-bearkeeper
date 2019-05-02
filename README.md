@@ -97,10 +97,12 @@ The npm packages that we used are:
 	c) uiud
 	d) firebase
 	e) semantic-ui react
+APIs
+	a) Firebase
 
 ### Division of Labor:
 
 1) Ja - Firebase integration, Implementing the Task List in courses, Fixing any bugs, implementing state management
-2) Priyans - Implementing the initial course addition system, initiation creation of files,  Handling the CSS, Adding functionalities in Tasks, Logo
+2) Priyans - Implementing the initial course addition system, initiation creation of files, Handling the CSS, Adding functionalities in Tasks, Logo
 
 
