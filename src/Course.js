@@ -47,6 +47,10 @@ export default class Course extends React.Component {
     }, { merge: true });
   };
 
+  deleteTodoItem(id) {
+    this.props.dbref.collection("todos").doc(id).delete()
+  };
+
   render() {
     return (
       <div className="center">
@@ -54,7 +58,8 @@ export default class Course extends React.Component {
           {this.state.todoItems.map(item => 
             <TodoItem modifyHandler={this.modifyTodoItem} text={item.data.description} key={item.id} id={item.id} date={item.data.dueDate} 
             toggleIsCompleted={this.toggleItemIsCompleted}
-            isComplete={item.data.isComplete} />)}
+            isComplete={item.data.isComplete} 
+            deleteTodoItem={this.deleteTodoItem} />)}
           <AddTodoItem addTodoItem={this.addTodoItem} />
         </Collapsible>
       <br/>
