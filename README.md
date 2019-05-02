@@ -70,7 +70,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 --------------------------------------------------------------------------------------------------------------------------
 
 Team Members: Ja (Thanakul) Wattanawong, Priyans Nishithkumar Desai
-Demo: published link
+Demo: [http://bit.ly/bearkeeper](http://bit.ly/bearkeeper)
 Prompt: Task Management System 
 
 ### Abstract: 
