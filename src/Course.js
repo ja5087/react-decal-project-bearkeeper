@@ -21,6 +21,7 @@ export default class Course extends React.Component {
     this.addTodoItem = this.addTodoItem.bind(this);
     this.modifyTodoItem = this.modifyTodoItem.bind(this);
     this.toggleItemIsCompleted = this.toggleItemIsCompleted.bind(this);
+    this.deleteTodoItem = this.deleteTodoItem.bind(this)
     }
   
 

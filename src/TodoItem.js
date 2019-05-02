@@ -83,7 +83,7 @@ export default class TodoItem extends React.Component {
                 value={moment(this.state.date).format("YYYY-MM-DD")}/>
               <input type="submit" id="form_submit"/>
               </form>
-              <button onClick={(e) => this.props.deleteTodoItem(id)} class="ui icon button"><i aria-hidden="true" class="trash icon"></i></button>
+              <button onClick={() => this.props.deleteTodoItem(id)} class="ui icon button"><i aria-hidden="true" class="trash icon"></i></button>
           </div> 
         </div>
     );
