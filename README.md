@@ -69,7 +69,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 --------------------------------------------------------------------------------------------------------------------------
 
-Team Members: Ja Wattanawong, Priyans Nishithkumar Desai
+Team Members: Ja (Thanakul) Wattanawong, Priyans Nishithkumar Desai
 Demo: published link
 Prompt: Task Management System 
 
@@ -100,7 +100,7 @@ The npm packages that we used are:
 
 ###Division of Labor:
 
-1) Ja - Firebase, Implementing the Task List in courses, Fixing any bugs 
+1) Ja - Firebase integration, Implementing the Task List in courses, Fixing any bugs, implementing state management
 2) Priyans - Implementing the initial course addition system, Handling the CSS, Adding few functionalities in Tasks, Logo
 
 
