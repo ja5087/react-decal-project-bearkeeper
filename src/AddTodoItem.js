@@ -9,7 +9,7 @@ export default class AddTodoItem extends React.Component {
 
     this.state = {
       newTodoItemValue: '',
-      date: new Date()// initialize to empty string
+      date: moment().format("YYYY-MM-DD") // initialize to empty string
     };
 
     this.handleChange = this.handleChange.bind(this);
