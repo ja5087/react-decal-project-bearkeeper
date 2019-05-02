@@ -32,7 +32,7 @@ export default class AddTodoItem extends React.Component {
     e.preventDefault();
     if (this.state.newTodoItemValue !== '') { 
       this.props.addTodoItem(this.state.newTodoItemValue, this.state.date);
-      this.setState({ newTodoItemValue: moment().format("YYYY-MM-DD"), date: 0 });
+      this.setState({ newTodoItemValue: "", date: moment().format("YYYY-MM-DD") });
     }
   }
 
@@ -44,6 +44,7 @@ export default class AddTodoItem extends React.Component {
             placeholder="Add a new todo for this course..."
             value={this.state.newTodoItemValue}
             onChange={this.handleChange}
+            required={true}
             className="todo-input"
           />
           <input type="date"
