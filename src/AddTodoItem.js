@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactComponent as Plus } from '../src/plus.svg';
 import '../src/styles/todoItem.css';
-
+import moment from "moment";
 
 export default class AddTodoItem extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ export default class AddTodoItem extends React.Component {
     e.preventDefault();
     if (this.state.newTodoItemValue !== '') { 
       this.props.addTodoItem(this.state.newTodoItemValue, this.state.date);
-      this.setState({ newTodoItemValue: '', date: 0 });
+      this.setState({ newTodoItemValue: moment().format("YYYY-MM-DD"), date: 0 });
     }
   }
 
@@ -47,13 +47,10 @@ export default class AddTodoItem extends React.Component {
             className="todo-input"
           />
           <input type="date"
+            id="date_picker"
             placeholder="Add the Due Date..."
-            value={new Intl.DateTimeFormat('en-GB', { 
-              year: 'numeric', 
-              month: 'long', 
-              day: '2-digit' 
-            }).format(this.state.date)}
             onChange={this.handleDateChange}
+            value={moment(this.state.date).format("YYYY-MM-DD")}
             className="todo-input"
           />
           <button type="submit" className="todo-input-button">
