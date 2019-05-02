@@ -66,3 +66,41 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Team Members: Ja Wattanawong, Priyans Nishithkumar Desai
+Demo: published link
+Prompt: Task Management System 
+
+###Abstract: 
+This app focuses on helping students organize their time and do tasks in a more timely manner. 
+
+###Components:
+1) Course - Adds a course
+2) Collapsible - Adds a collapsible/dropdown 
+3) TodoItem - Task in courses
+4) AddTodoItem - Helps adding courses 
+
+###Features:
+
+Students are able to:
+	a) Add courses
+	b) Add tasks and due dates to the added courses
+	c) Edit already added tasks by simply just clicking on it. 
+	d) If the dude date is passed, the date turns red
+	e) If within the date, the date turns green. 
+
+The npm packages that we used are:
+	a) react-collapsible
+	b) moment 
+	c) uiud
+	d) firebase
+	e) semantic-ui react
+
+###Division of Labor:
+
+1) Ja - Firebase, Implementing the Task List in courses, Fixing any bugs 
+2) Priyans - Implementing the initial course addition system, Handling the CSS, Adding few functionalities in Tasks, Logo
+
+
