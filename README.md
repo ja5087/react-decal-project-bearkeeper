@@ -76,14 +76,10 @@ Prompt: Task Management System
 ### Abstract: 
 This app focuses on helping students organize their time and do tasks in a more timely manner. 
 
-<<<<<<< Updated upstream
-### Components:
-=======
 ###Technical features:
 We're currently collecting keyboard input for the To-Do list. The onclick handlers are used to switch between editable and non-editable. Firebase is our main API intergration that allows state to be saved.
 
 ###Components:
->>>>>>> Stashed changes
 1) Course - Adds a course
 2) Collapsible - Adds a collapsible/dropdown 
 3) TodoItem - Task in courses
