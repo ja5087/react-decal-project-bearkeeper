@@ -1,26 +1,38 @@
 import React from 'react';
 import './styles/todolist.css';
 import { ReactComponent as Check } from '../src/check.svg';
+import moment from "moment";
 
 export default class TodoItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.onClickHandler = this.onClickHandler.bind(this);
+    this.onDateClickHandler = this.onDateClickHandler.bind(this);
+    this.onTodoClickHandler = this.onTodoClickHandler.bind(this);
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.onDateChangeHandler = this.onDateChangeHandler.bind(this)
     this.state = {
         text: this.props.text,
-        "isEditable": false,
-        date: this.props.date
+        date: this.props.date,
+        "todoEditable": false,
+        "dateEditable": false
     }
   }
 
-  onClickHandler(e) {
+  onDateClickHandler(e) {
     e.preventDefault();
     if(!this.state.isEditable) {
         this.setState(prevState => ({
-            "isEditable": true
+            "dateEditable": true
+        }));
+    }
+  }
+
+  onTodoClickHandler(e) {
+    e.preventDefault();
+    if(!this.state.isEditable) {
+        this.setState(prevState => ({
+            "todoEditable": true
         }));
     }
   }
@@ -38,7 +50,8 @@ export default class TodoItem extends React.Component {
     let {id} = this.props;
     this.props.modifyHandler(id, this.state.text, this.state.date);
     this.setState(prevState => ({
-        "isEditable": false
+        "todoEditable": false,
+        "dateEditable": false
     }));
   }
 
@@ -56,16 +69,17 @@ export default class TodoItem extends React.Component {
               <form onSubmit={this.handleSubmit}>
               <input 
                 className="todo-item-description"
-                type={this.state.isEditable ? "text" : "button"} 
-                onClick={this.onClickHandler} 
+                type={this.state.todoEditable ? "text" : "button"} 
+                onClick={this.onTodoClickHandler} 
                 onChange={this.onChangeHandler}
                 value={this.state.text}/>
               <input 
                 className="todo-item-description-date"
-                type={this.state.isEditable ? "text" : "button"} 
-                onClick={this.onClickHandler} 
+                type={this.state.dateEditable ? "date" : "button"} 
+                onClick={this.onDateClickHandler} 
                 onChange={this.onDateChangeHandler}
-                value={new Date(this.state.date).toLocaleDateString()}/>
+                value={moment(this.state.date).format("YYYY-MM-DD")}/>
+              <input type="submit" id="form_submit"/>
               </form>
           </div>
         </div>

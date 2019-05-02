@@ -88,3 +88,7 @@
 .todo-item-container:hover .todo-item-start-session-button {
   display: block;
 }
+
+#form_submit {
+  display:none;
+}
