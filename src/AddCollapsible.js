@@ -9,6 +9,7 @@ export default class AddCollapsible extends React.Component {
 
     this.state = {
       newTodoItemValue: '', // initialize to empty string
+      newRemoveValue: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -20,7 +21,6 @@ export default class AddCollapsible extends React.Component {
       newTodoItemValue: e.target.value
     });
   }
-
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.newTodoItemValue !== '') { 
@@ -28,7 +28,6 @@ export default class AddCollapsible extends React.Component {
       this.setState({ newTodoItemValue: '' });
     }
   }
-
   render() {
     return (
       <div className="todo-input-container">

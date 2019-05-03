@@ -34,6 +34,7 @@ class App extends Component {
     });
 
     this.addCollapsible = this.addCollapsible.bind(this);
+    this.deleteCollapsible = this.deleteCollapsible.bind(this);
   }
   addCollapsible(title) {
     const newCollapsible = {
@@ -41,6 +42,9 @@ class App extends Component {
       name: title
     };
     this.db.collection("alltodos").add(newCollapsible)
+  }
+  deleteCollapsible(id) {
+    this.db.collection("alltodos").doc(id).delete()
   }
   
   render() {
@@ -51,11 +55,12 @@ class App extends Component {
             <img src={img} alt="Logo" width="10px" height="5"/>
           </header>
           <div className="items-container">
-              {this.state.collapsibles.map(x => (<Course key={x.id} title={x.data.name} dbref={this.db.collection("alltodos").doc(x.id)}/>))}
+              {this.state.collapsibles.map(x => (<Course key={x.id} id={x.id} 
+                                                    deleteCollapsible={this.deleteCollapsible} title={x.data.name} dbref={this.db.collection("alltodos").doc(x.id)}/>))}
           </div>
         </div>
         <footer>
-          <AddCollapsible addCollapsible={this.addCollapsible}  />
+          <AddCollapsible addCollapsible={this.addCollapsible}/>
         </footer>
       </div>
     );

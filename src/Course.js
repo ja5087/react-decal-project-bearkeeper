@@ -53,6 +53,7 @@ export default class Course extends React.Component {
   };
 
   render() {
+
     return (
       <div className="center">
         <Collapsible trigger={this.props.title}>
@@ -62,6 +63,7 @@ export default class Course extends React.Component {
             isComplete={item.data.isComplete} 
             deleteTodoItem={this.deleteTodoItem} />)}
           <AddTodoItem addTodoItem={this.addTodoItem} />
+          <button onClick={() => this.props.deleteCollapsible(this.props.id)} class="ui extra icon button"><i aria-hidden="true" class="trash alternate outline icon"></i></button>
         </Collapsible>
       <br/>
       <br></br>
